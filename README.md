@@ -18,7 +18,7 @@
 1. 将项目clone至 ~/.config/nvim 目录中(注意备份好自己的配置)  
     ```plaintext
     cd ~/.config
-    git clone https://github.com/yaocccc/nvim
+    git clone https://github.com/mrthere3/nvim.git
     ```
 2. 启动vim 等待自动安装packer(包管理工具、如果你没有安装的话) 会自动安装所有插件
 
