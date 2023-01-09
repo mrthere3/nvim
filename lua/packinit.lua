@@ -15,6 +15,14 @@ end
 -- setup  发生在插件载入后 一般为 require('xxx').setup() 之类的配置
 require('packer').startup({
     function(use)
+         -- Debugger
+          -- use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+          -- use {
+          --   "ravenxrz/nvim-dap",
+          --   -- commit = "f9480362549e2b50a8616fe4530deaabbc4f889b",
+          -- }
+          -- use "theHamsta/nvim-dap-virtual-text"
+          -- use "rcarriga/nvim-dap-ui"
         -- packer 管理自己的版本
         use { 'wbthomason/packer.nvim' }
 
@@ -59,8 +67,8 @@ require('packer').startup({
         use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
 
         -- tree-sitter
-        -- require('pack/tree-sitter').config()
-        -- use { 'nvim-treesitter/nvim-treesitter', config = "require('pack/tree-sitter').setup()", run = ':TSUpdate', event = 'BufRead' }
+        require('pack/tree-sitter').config()
+        use { 'nvim-treesitter/nvim-treesitter', config = "require('pack/tree-sitter').setup()", run = ':TSUpdate', event = 'BufRead' }
         -- use { 'nvim-treesitter/playground', after = 'nvim-treesitter' }
 
         -- markdown预览插件 导航生成插件

@@ -1,4 +1,6 @@
 local G = require('G')
+G.g.mapleader = "z"
+G.g.maplocalleader = "z"
 
 G.cmd([[au BufEnter * if &buftype == '' && &readonly == 1 | set buftype=acwrite | set noreadonly | endif]])
 G.cmd([[
