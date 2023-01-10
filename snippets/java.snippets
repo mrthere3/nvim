@@ -4,7 +4,7 @@ snippet main "main_method_static"
 	}
 
 snippet sout "Systemout" 
-	System.out.println($1)
+	System.out.println($1);
 
 snippet br "break" 
 	break
@@ -23,17 +23,18 @@ snippet public-methodi "Description" b
 	}
 
 
-snippet if "if condition"
-	if ${1:/* condition */} {
+snippet if "if-java"
+	if (${1:/* condition */}){
 		${2:${VISUAL}}
 	}
 
 snippet for "for condition"
-	for ${1:/* condition */} {
+	for (${1:/* condition */}){
 		${2:${VISUAL}}
 	}
 
-snippet else "if condition"
-	else ${1:/* condition */} {
-		${2:${VISUAL}}
-	}
+# snippet elsei "else{}"
+# 	else{
+# 		${1:/*blank*/}
+# 	}
+

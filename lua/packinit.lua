@@ -15,14 +15,10 @@ end
 -- setup  发生在插件载入后 一般为 require('xxx').setup() 之类的配置
 require('packer').startup({
     function(use)
-         -- Debugger
-          -- use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
-          -- use {
-          --   "ravenxrz/nvim-dap",
-          --   -- commit = "f9480362549e2b50a8616fe4530deaabbc4f889b",
-          -- }
-          -- use "theHamsta/nvim-dap-virtual-text"
-          -- use "rcarriga/nvim-dap-ui"
+        -- theme--
+        use{'arcticicestudio/nord-vim'}
+        use{"'glepnir/oceanic-material'"}
+        require('pack/colorscheme').config()
         -- packer 管理自己的版本
         use { 'wbthomason/packer.nvim' }
 
@@ -35,7 +31,6 @@ require('packer').startup({
         -- vv 快速选中内容插件
         require('pack/vim-expand-region').config()
         use { 'terryma/vim-expand-region', config = "require('pack/vim-expand-region').setup()", event = 'CursorHold' }
-
         -- ff 高亮光标下的word
         require('pack/vim-interestingwords').config()
         use { 'lfv89/vim-interestingwords', config = "require('pack/vim-interestingwords').setup()", event = 'CursorHold' }

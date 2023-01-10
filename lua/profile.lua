@@ -85,7 +85,6 @@ G.cmd([[
 
 -- show
 G.cmd([[
-    colorscheme solarized8_high
     set cmdheight=1
     set updatetime=300
     set shortmess+=cI
