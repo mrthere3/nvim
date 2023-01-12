@@ -42,10 +42,11 @@
     "git.addGBlameToBufferVar": true,
     "git.splitWindowCommand": "below 10sp",
     "java.clean.workspace": true,
+//    此处设置jdk路径和配套的java-jdt
     "java.configuration.runtimes": [
         {
-            "name": "JavaSE-14",
-            "path": "/opt/jdk-14.0.2",
+            "name": "JavaSE-11",
+            "path": "/usr/lib/jvm/java-11-openjdk-amd64",
             "default": true
         }
     ],
