@@ -21,7 +21,6 @@ require('packer').startup({
         require('pack/colorscheme').config()
         -- packer 管理自己的版本
         use { 'wbthomason/packer.nvim' }
-
         -- 启动时间分析
         use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 
@@ -87,6 +86,19 @@ require('packer').startup({
         use { 'yaocccc/nvim-hlchunk' }                                                 -- 高亮{}范围
         use { 'yaocccc/vim-surround' }                                                 -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
+                -- debug--
+        require('pack/dap-config').config()
+        use {"ravenxrz/nvim-dap",}
+        require('pack/dp-install').config()
+        use "ravenxrz/DAPInstall.nvim"
+        require('pack/dap-vutext').config()
+        use {"theHamsta/nvim-dap-virtual-text"}
+        require('pack/dap-ui').config()
+        use {"rcarriga/nvim-dap-ui"}
+        use {"ravenxrz/DAPInstall.nvim"}
+        use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
+        use{'mfussenegger/nvim-jdtls'}
+--         require('pack/dap-java').config()
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },

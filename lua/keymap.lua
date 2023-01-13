@@ -1,6 +1,4 @@
 local G = require('G')
-G.g.mapleader = "z"
-G.g.maplocalleader = "z"
 
 G.cmd([[au BufEnter * if &buftype == '' && &readonly == 1 | set buftype=acwrite | set noreadonly | endif]])
 G.cmd([[
@@ -147,6 +145,14 @@ G.map({
 
     -- 切换是否wrap
     { 'n', '\\w',         "&wrap == 1 ? ':set nowrap<cr>' : ':set wrap<cr>'", { noremap = true, expr = true } },
+--     { 'n', "1+<F6>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-i>", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", { noremap = true, expr = true } },
+--     { 'n', "<F6>", "<cmd>lua require'dap'.terminate()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-<F5>>", "<cmd>lua require'dap'.continue()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-F6>", "<cmd>lua require'dap'.step_over()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-F7>", "<cmd>lua require'dap'.step_into()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-F8>", "<cmd>lua require'dap'.step_out()<cr>", { noremap = true, expr = true } },
+--     { 'n', "<c-k>", "<cmd>lua require'dapui'.eval()<cr>", { noremap = true, expr = true } },
 })
 
 -- 重设tab长度
@@ -232,3 +238,17 @@ G.cmd([[
         call cursor(l, c1)
     endf
 ]])
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+local term_opts = { silent = true }
+keymap("n", "<F6>", "<cmd>lua require'dap'.toggle_breakpoint(); require'pack.dap-util'.store_breakpoints(true)<cr>", opts)
+keymap("n", "<c-i>", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
+keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "rl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+-- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
+keymap("n", "@", "<cmd>lua require'dap'.terminate()<cr>", opts)
+keymap("n", "<c-r>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "st", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
