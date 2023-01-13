@@ -38,7 +38,7 @@ function M.config()
           elements = {
             'console',
           },
-          size = 0,
+          size = 6,
           position = 'top',
         },
         {

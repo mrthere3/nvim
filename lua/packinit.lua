@@ -98,6 +98,8 @@ require('packer').startup({
         use {"ravenxrz/DAPInstall.nvim"}
         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use{'mfussenegger/nvim-jdtls'}
+        use {'leoluz/nvim-dap-go'}
+--         require('pack/dap-go').config()
 --         require('pack/dap-java').config()
     end,
     config = {
