@@ -2,8 +2,9 @@ local dap_install = require "dap-install"
 local M={}
 function M.config()
     dap_install.config(
-        "python",
-      {})
+        "python",{})
+--     dap_install.config(
+--     "jsnode",{"node-debug2"})
     dap_install.setup {
     installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
     }
