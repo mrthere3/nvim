@@ -22,7 +22,7 @@ function M.config()
           elements = {
             'scopes',
           },
-          size = 40,
+          size = 30,
           position = 'left',
         },
         {
@@ -31,21 +31,21 @@ function M.config()
             'breakpoints',
             'watches',
           },
-          size = 40,
+          size = 19,
           position = 'right',
         },
         {
           elements = {
             'console',
           },
-          size = 5,
+          size = 0,
           position = 'top',
         },
         {
           elements = {
             'repl',
           },
-          size = 12,
+          size = 10,
           position = 'bottom',
         },
       },
