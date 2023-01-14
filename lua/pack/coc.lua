@@ -18,7 +18,7 @@ function M.config()
         'coc-prettier',
         'coc-snippets', 'coc-pairs', 'coc-word',
         'coc-translator',
-        'coc-git',
+        'coc-git','coc-lists','coc-actions'
     }
     G.cmd("command! -nargs=? Fold :call CocAction('fold', <f-args>)")
     G.cmd("hi! link CocPum Pmenu")
@@ -55,6 +55,10 @@ function M.config()
         { 'n', '\\g', ":call coc#config('git.addGBlameToVirtualText',  !get(g:coc_user_config, 'git.addGBlameToVirtualText', 0)) | call nvim_buf_clear_namespace(bufnr(), -1, line('.') - 1, line('.'))<cr>", {silent = true} },
         { 'x', '=', 'CocHasProvider("formatRange") ? "<Plug>(coc-format-selected)" : "="', {silent = true, noremap = true, expr = true}},
         { 'n', '=', 'CocHasProvider("formatRange") ? "<Plug>(coc-format-selected)" : "="', {silent = true, noremap = true, expr = true}},
+        { 'n', 'ct', "<Plug>(coc-codeaction)", {silent = true, nowait = true}},
+        { 'n', 'cf', "<Plug>(coc-fix-current)", {silent = true, nowait = true}},
+        { 'n', 'cr', "<Plug>(coc-codeaction-refactor)", {{silent = true}},
+--         { 'n', 'as', "<Plug>(coc-codeaction-refactor-selected)", {silent = true}},
     })
 end
 

@@ -248,7 +248,24 @@ keymap("n", "rl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 -- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
 keymap("n", "@", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<c-r>", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "st", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F7>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opts)
+
+-- Remap keys for apply code actions at the cursor position.
+-- keymap("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
+-- -- Remap keys for apply code actions affect whole buffer.
+-- keymap("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
+-- -- Remap keys for applying codeActions to the current buffer
+-- keymap("n", "ac", "<Plug>(coc-codeaction)", opts)
+-- Apply the most preferred quickfix action on the current line.
+-- keymap("n", "af", "<Plug>(coc-fix-current)", opts)
+
+-- Remap keys for apply refactor code actions.
+-- keymap("n", "<leader>re", "<Plug>(coc-codeaction-refactor)", { silent = true })
+-- keymap("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
+-- keymap("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
+
+-- Run the Code Lens actions on the current line
+-- keymap("n", "cl", "<Plug>(coc-codelens-action)", opts)
