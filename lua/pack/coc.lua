@@ -57,7 +57,7 @@ function M.config()
         { 'n', '=', 'CocHasProvider("formatRange") ? "<Plug>(coc-format-selected)" : "="', {silent = true, noremap = true, expr = true}},
         { 'n', 'ct', "<Plug>(coc-codeaction)", {silent = true, nowait = true}},
         { 'n', 'cf', "<Plug>(coc-fix-current)", {silent = true, nowait = true}},
-        { 'n', 'cr', "<Plug>(coc-codeaction-refactor)", {{silent = true}},
+        { 'n', 'cr', "<Plug>(coc-codeaction-refactor)", {silent = true}},
 --         { 'n', 'as', "<Plug>(coc-codeaction-refactor-selected)", {silent = true}},
     })
 end

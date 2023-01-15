@@ -142,6 +142,15 @@ function M.config()
 --         program = "./${relativeFileDirname}"
 --       },
     }
+--    dap.configurations.java = {
+--     {
+--       type = 'java';
+--       request = 'attach';
+--       name = "Attach to the process";
+--       hostName = 'localhost';
+--       port = '5005';
+--     }}
+
   local dap_breakpoint = {
     error = {
       text = "🛑",
