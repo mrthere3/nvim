@@ -13,7 +13,7 @@ function M.config()
         js = 'console.log([ECHO])',
         ts = 'console.log([ECHO])',
         vue = 'console.log([ECHO])',
-        java = 'System.out.println([ECHO])',
+        java = 'System.out.println([ECHO]);',
     }
 
     -- vim-comment
