@@ -89,13 +89,11 @@ require('packer').startup({
                 -- debug--
         use {"ravenxrz/nvim-dap",}
         require('pack/dap-config').config()
-        require('pack/dp-install').config()
         use "ravenxrz/DAPInstall.nvim"
-        require('pack/dap-vutext').config()
         use {"theHamsta/nvim-dap-virtual-text"}
-        require('pack/dap-ui').config()
+        require('pack/dap-vutext').config()
         use {"rcarriga/nvim-dap-ui"}
-        use {"ravenxrz/DAPInstall.nvim"}
+        require('pack/dap-ui').config()
         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use{'mfussenegger/nvim-jdtls'}
         use {'leoluz/nvim-dap-go'}
