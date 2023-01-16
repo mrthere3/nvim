@@ -87,8 +87,8 @@ require('packer').startup({
         use { 'yaocccc/vim-surround' }                                                 -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
                 -- debug--
-        require('pack/dap-config').config()
         use {"ravenxrz/nvim-dap",}
+        require('pack/dap-config').config()
         require('pack/dp-install').config()
         use "ravenxrz/DAPInstall.nvim"
         require('pack/dap-vutext').config()
