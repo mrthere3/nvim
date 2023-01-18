@@ -89,7 +89,6 @@ require('packer').startup({
                 -- debug--
         use {"ravenxrz/nvim-dap",}
         require('pack/dap-config').config()
-        use "ravenxrz/DAPInstall.nvim"
         use {"theHamsta/nvim-dap-virtual-text"}
         require('pack/dap-vutext').config()
         use {"rcarriga/nvim-dap-ui"}
