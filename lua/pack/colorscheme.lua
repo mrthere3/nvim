@@ -1,7 +1,7 @@
 local G =require("G")
 local M = {}
 function M.config()
-    G.cmd('colorscheme solarized8_high')
+    G.cmd("colorscheme nord")
 end
 
 function M.setup()

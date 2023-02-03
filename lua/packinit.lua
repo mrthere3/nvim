@@ -18,7 +18,7 @@ require('packer').startup({
         -- theme--
         use{'arcticicestudio/nord-vim'}
         use{'glepnir/oceanic-material'}
-        require('pack/colorscheme').config()
+        -- require('pack/colorscheme').config()
         -- packer 管理自己的版本
         use { 'wbthomason/packer.nvim' }
         -- 启动时间分析
