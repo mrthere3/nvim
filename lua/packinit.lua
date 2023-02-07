@@ -93,11 +93,8 @@ require('packer').startup({
         require('pack/dap-vutext').config()
         use {"rcarriga/nvim-dap-ui"}
         require('pack/dap-ui').config()
-        use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
-        use{'mfussenegger/nvim-jdtls'}
+--         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use {'leoluz/nvim-dap-go'}
---         require('pack/dap-go').config()
---         require('pack/dap-java').config()
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },
