@@ -1,6 +1,7 @@
 local status_ok, dapui = pcall(require, 'dapui')
 local M ={}
 function M.config()
+    print(status_ok)
     if not status_ok then
       vim.notify("dapui not found")
       return

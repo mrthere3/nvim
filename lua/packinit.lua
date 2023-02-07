@@ -95,6 +95,8 @@ require('packer').startup({
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use {'leoluz/nvim-dap-go'}
+
+
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },
