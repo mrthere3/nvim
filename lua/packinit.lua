@@ -88,10 +88,11 @@ require('packer').startup({
         use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
                 -- debug--
         use {"ravenxrz/nvim-dap",}
+        use {"rcarriga/nvim-dap-ui"}
         require('pack/dap-config').config()
+        require('pack/dap-config').setup()
         use {"theHamsta/nvim-dap-virtual-text"}
         require('pack/dap-vutext').config()
-        use {"rcarriga/nvim-dap-ui"}
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use {'leoluz/nvim-dap-go'}
