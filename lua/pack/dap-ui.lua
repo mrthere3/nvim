@@ -43,13 +43,6 @@ function M.config()
           size = 10,
           position = 'right',
         },
-        {
-          elements = {
-            'repl',
-          },
-          size = 10,
-          position = 'bottom',
-        },
       },
       -- sidebar = {
       --   -- You can change the order of elements in the sidebar
