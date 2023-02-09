@@ -33,16 +33,23 @@ function M.config()
             'watches',
             'repl',
           },
-          size = 10,
+          size = 5,
           position = 'bottom',
         },
         {
           elements = {
             'console',
           },
-          size = 10,
+          size = 15,
           position = 'right',
         },
+--         {
+--           elements = {
+--             'repl',
+--           },
+--           size = 15,
+--           position = 'bottom',
+--         },
       },
       -- sidebar = {
       --   -- You can change the order of elements in the sidebar
