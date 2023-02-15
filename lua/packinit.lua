@@ -77,6 +77,9 @@ require('packer').startup({
         -- 状态栏 & 标题栏
         require('pack/nvim-lines').config()
         use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
+--         use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
+--         require('pack/lualine').config()
+
 
         -- 部分个人自写插件
         require('pack/yaocccc').config()                                               -- yaocccc/* 共用一个config
@@ -87,15 +90,15 @@ require('packer').startup({
         use { 'yaocccc/vim-surround' }                                                 -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
                 -- debug--
-        use {"ravenxrz/nvim-dap",}
-        use {"rcarriga/nvim-dap-ui"}
-        require('pack/dap-config').config()
-        require('pack/dap-config').setup()
-        use {"theHamsta/nvim-dap-virtual-text"}
-        require('pack/dap-vutext').config()
-        require('pack/dap-ui').config()
---         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
-        use {'leoluz/nvim-dap-go'}
+--         use {"ravenxrz/nvim-dap",}
+--         use {"rcarriga/nvim-dap-ui"}
+--         require('pack/dap-config').config()
+--         require('pack/dap-config').setup()
+--         use {"theHamsta/nvim-dap-virtual-text"}
+--         require('pack/dap-vutext').config()
+--         require('pack/dap-ui').config()
+-- --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
+--         use {'leoluz/nvim-dap-go'}
 
 
     end,

@@ -24,7 +24,7 @@ function M.config()
     G.g.floaterm_autoclose = 1
     G.g.floaterm_opener = 'edit'
     G.cmd("au BufEnter * if &buftype == 'terminal' | :call timer_start(50, { -> execute('startinsert!') }, { 'repeat': 3 }) | endif")
-    G.cmd("hi FloatermBorder ctermfg=fg ctermbg=none")
+--     G.cmd("hi FloatermBorder ctermfg=fg ctermbg=none")
     function RunFile()
         G.cmd('w')
         local ft = G.eval('&ft')

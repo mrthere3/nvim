@@ -15,8 +15,8 @@
     "inlayHint.enable": false,
     "list.alignColumns": true,
     "list.floatPreview": true,
-    "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
-    "snippets.ultisnips.directories": ["~/.config/nvim/snippets/ultisnips"],
+    "snippets.userSnippetsDirectory": "C:/Users/wxg/AppData/Local/nvim/snippets",
+    "snippets.ultisnips.directories": ["C:/Users/wxg/AppData/Localnvim/snippets/ultisnips"],
     "snippets.extends.javascript": ["typescript"],
     "tabnine.priority": 80,
     "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
@@ -46,11 +46,11 @@
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-17",
-            "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+            "path": "G:/jdk17",
             "default": true
         }
     ],
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
+    "clangd.path": "C:/Users/wxg/AppData/Local/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
     "prettier": {
         "tabWidth": 4,
         "printWidth": 160,
