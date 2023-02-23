@@ -86,6 +86,12 @@ require('packer').startup({
         use { 'yaocccc/nvim-hlchunk' }                                                 -- 高亮{}范围
         use { 'yaocccc/vim-surround' }                                                 -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
+        use({"nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+    config = function()
+        require("telescope").load_extension("lazygit")
+    end,
+})
                 -- debug--
         use {"ravenxrz/nvim-dap",}
         use {"rcarriga/nvim-dap-ui"}
