@@ -60,7 +60,7 @@ end
 
 
 -- persist breakpoint
-local bp_base_dir = os.getenv("HOME") .. "/.cache/dap-breakpoint/"
+local bp_base_dir = "C:\\Users\\wxg\\.cache\\dap-breakpoint"
 local breakpoints = require('dap.breakpoints')
 local utils = require("pack.utils")
 
@@ -79,44 +79,44 @@ function M.store_breakpoints()
   end
 
   -- build bps json file
-  local buf_name = vim.api.nvim_buf_get_name(0)
-  buf_name = buf_name:gsub("/", "-")
-  local fp = io.open(bp_base_dir .. buf_name:sub(2, #buf_name) .. '.json', 'w')
+--   local buf_name = vim.api.nvim_buf_get_name(0)
+--   buf_name = buf_name:gsub("/", "-")
+--   local fp = io.open(bp_base_dir .. buf_name:sub(2, #buf_name) .. '.json', 'w')
 
   -- write bps into json file
-  local json_str = vim.fn.json_encode(bps)
-  if json_str ~= nil then
-    fp:write(json_str)
-  end
-  fp:close()
-end
+--   local json_str = vim.fn.json_encode(bps)
+--   if json_str ~= nil then
+--     fp:write(json_str)
+--   end
+--   fp:close()
+-- end
 
-function M.load_breakpoints()
-  -- build bps json file
-  local buf_name = vim.api.nvim_buf_get_name(0)
-  buf_name = buf_name:gsub("/", "-")
-  local fp = io.open(bp_base_dir .. buf_name:sub(2, #buf_name) .. '.json', 'r')
-  if fp == nil then
-    return
-  end
+-- function M.load_breakpoints()
+--   -- build bps json file
+--   local buf_name = vim.api.nvim_buf_get_name(0)
+--   buf_name = buf_name:gsub("/", "-")
+--   local fp = io.open(bp_base_dir .. buf_name:sub(2, #buf_name) .. '.json', 'r')
+--   if fp == nil then
+--     return
+--   end
 
   -- read breakpoints from json file
-  local content = fp:read('*a')
-  local bps = vim.fn.json_decode(content)
-  for bufname, buf_bps in pairs(bps) do
-    if vim.api.nvim_buf_get_name(0) == bufname then
-      local bufnr = vim.api.nvim_buf_get_number(0)
-      for _, bp in pairs(buf_bps) do
-        local line = bp.line
-        local opts = {
-          condition = bp.condition,
-          log_message = bp.logMessage,
-          hit_condition = bp.hitCondition
-        }
-        breakpoints.set(opts, bufnr, line)
-      end
-    end
-  end
+--   local content = fp:read('*a')
+--   local bps = vim.fn.json_decode(content)
+--   for bufname, buf_bps in pairs(bps) do
+--     if vim.api.nvim_buf_get_name(0) == bufname then
+--       local bufnr = vim.api.nvim_buf_get_number(0)
+--       for _, bp in pairs(buf_bps) do
+--         local line = bp.line
+--         local opts = {
+--           condition = bp.condition,
+--           log_message = bp.logMessage,
+--           hit_condition = bp.hitCondition
+--         }
+--         breakpoints.set(opts, bufnr, line)
+--       end
+--     end
+--   end
 end
 
 return M

@@ -49,7 +49,8 @@ function M.config()
         md = {'[^_^]:', '    ', ''},
         vue = {'/**', ' *', ' */'},
         sol = {'/**', ' *', ' */'},
-        py = {'"""','  ','"""'}
+        py = {'"""','  ','"""'},
+        lua = {'--[[','','--]]'}
     }
     G.map({
         { 'n', '??', ':NToggleComment<cr>', {silent = true, noremap = true}},

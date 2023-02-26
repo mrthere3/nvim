@@ -24,9 +24,9 @@ function M.config()
 --     }
 
     dap.adapters.python = {
-      type = "executable",
-      command = "python",
-      args = { "-m", "debugpy.adapter" },
+    type = "executable",
+    command = "pythonw",
+    args = { "-m", "debugpy.adapter" },
     }
 
 --     dap.adapters.java = function(callback)
@@ -39,22 +39,22 @@ function M.config()
 --         port = 8432;
 --       })
 --     end
-    dap.adapters.node2 = {
-      type = 'executable',
-      command = 'node',
-      args = {os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js'},
-    }
-    dap.configurations.javascript = {
-      {
-        name = "Launch file",
-        type = 'node2',
-        request = 'launch',
-        program = '${file}',
-        cwd = vim.fn.getcwd(),
+    -- dap.adapters.node2 = {
+      -- type = 'executable',
+      -- command = 'node',
+      -- args = {os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js'},
+    -- }
+    -- dap.configurations.javascript = {
+      -- {
+        --name = "Launch file",
+        --type = 'node2',
+        --request = 'launch',
+        --program = '${file}',
+        --cwd = vim.fn.getcwd(),
 --         sourceMaps = true,
 --         protocol = 'inspector',
 --         console = 'integratedTerminal',
-      },
+      -- },
 --       {
         -- For this to work you need to make sure the node process is started with the `--inspect` flag.
 --         name = 'Attach to process',
@@ -62,7 +62,7 @@ function M.config()
 --         request = 'attach',
 --         processId = require'dap.utils'.pick_process,
 --       },
-    }
+    -- }
     dap.configurations.python = {
       -- launch exe
       {
@@ -71,59 +71,67 @@ function M.config()
         name = "Launch file",
         program = "${file}", -- This configuration will launch the current file if used.
         args = function()
-          local input = vim.fn.input("Input args: ")
-          return require("pack.dap-util").str2argtable(input)
+--           local input = vim.fn.input("Input args: 1"):
+          return require("pack.dap-util").str2argtable(1)
         end,
-        pythonPath = '/usr/bin/python3.8'
+        pythonPath = 'G:\\miniconda\\pythonw'
       }
     }
-    dap.adapters.go = function(callback, config)
-      local stdout = vim.loop.new_pipe(false)
-      local handle
-      local pid_or_err
-      local port = 38697
-      local opts = {
-        stdio = { nil, stdout },
-        args = { "dap", "--check-go-version=false", "--listen=127.0.0.1:" .. port, "--log-dest=3" },
-        detached = true
-      }
-      handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
-        stdout:close()
-        handle:close()
-        if code ~= 0 then
-          print('dlv exited with code', code)
-        end
-      end)
-      assert(handle, 'Error running dlv: ' .. tostring(pid_or_err))
-      stdout:read_start(function(err, chunk)
-        assert(not err, err)
-        if chunk then
-          vim.schedule(function()
-            require('dap.repl').append(chunk)
-          end)
-        end
-      end)
-      -- Wait for delve to start
-      vim.defer_fn(
-        function()
-          callback({type = "server", host = "127.0.0.1", port = port})
-        end,
-        300)
-    end
+    --
+     --
+     --[[
+       dap.adapters.go = function(callback, config)
+         local stdout = vim.loop.new_pipe(false)
+         local handle
+         local pid_or_err
+         local port = 38697
+         local opts = {
+           stdio = { nil, stdout },
+           args = { "dap", "--check-go-version=false", "--listen=127.0.0.1:" .. port, "--log-dest=3" },
+           detached = true
+         }
+         handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
+           stdout:close()
+           handle:close()
+           if code ~= 0 then
+             print('dlv exited with code', code)
+           end
+         end)
+         assert(handle, 'Error running dlv: ' .. tostring(pid_or_err))
+         stdout:read_start(function(err, chunk)
+           assert(not err, err)
+           if chunk then
+             vim.schedule(function()
+               require('dap.repl').append(chunk)
+             end)
+           end
+         end)
+         -- Wait for delve to start
+         vim.defer_fn(
+           function()
+             callback({type = "server", host = "127.0.0.1", port = port})
+           end,
+           300)
+      
+      end
+      
+     --]]
 
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
-    dap.configurations.go = {
-      {
-        type = "go",
-        name = "Debug",
-        request = "launch",
-        cwd = '${workspaceFolder}',
-        program = "${file}",
---         args = function()
+--[[
+     dap.configurations.go = {
+       {
+         type = "go",
+         name = "Debug",
+         request = "launch",
+         cwd = '${workspaceFolder}',
+         program = "${file}",
+ --         args = function()
+--]]
 --           local input = vim.fn.input("Input args: ")
 --           return require("pack.dap-util").str2argtable(input)
 --         end,
-      },
+      -- },
 --       {
 --         type = "go",
 --         name = "Debug test", -- configuration for debugging test files
@@ -141,7 +149,7 @@ function M.config()
 --         cwd = '${workspaceFolder}',
 --         program = "./${relativeFileDirname}"
 --       },
-    }
+    -- }
 --    dap.configurations.java = {
 --     {
 --       type = 'java';
