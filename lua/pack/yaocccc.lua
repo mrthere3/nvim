@@ -18,6 +18,7 @@ function M.config()
         ts = 'console.log([ECHO])',
         vue = 'console.log([ECHO])',
         java = 'System.out.println([ECHO]);',
+        py = 'print([ECHO])'
     }
 
     -- vim-comment
@@ -38,6 +39,7 @@ function M.config()
         vue = '//',
         sql = '--',
         sol = '//',
+        py = '#'
     }
     G.g.vim_chunk_comments = {
         js = {'/**', ' *', ' */'},
@@ -47,6 +49,7 @@ function M.config()
         md = {'[^_^]:', '    ', ''},
         vue = {'/**', ' *', ' */'},
         sol = {'/**', ' *', ' */'},
+        py = {'"""','  ','"""'}
     }
     G.map({
         { 'n', '??', ':NToggleComment<cr>', {silent = true, noremap = true}},
