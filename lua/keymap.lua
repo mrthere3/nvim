@@ -259,6 +259,7 @@ keymap("n","<c-p>","<cmd>Telescope live_grep<cr>",opts)
 keymap("n","<c-h>","<cmd>Telescope buffers<cr>",opts)
 keymap("n","fh","<cmd>Telescope help_tags<cr>",opts)
 keymap("n","<c-g>","<cmd>Telescope git_files<cr>:",opts)
+keymap("n","fm","<cmd>Telescope marks<cr>:",opts)
 -- Remap keys for apply code actions at the cursor position.
 -- keymap("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
 -- -- Remap keys for apply code actions affect whole buffer.
