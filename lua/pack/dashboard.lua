@@ -1,26 +1,68 @@
-local M = {}
+local M ={}
 function M.config()
-require('dashboard').setup{}
-vim.g.dashboard_default_executive = 'telescope'
-vim.g.dashboard_custom_header = {
-' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-' ████╗  ██║ ██╔════╝ ██╔══██╗ ██║   ██║ ██║ ████╗ ████║',
-' ██╔██╗ ██║ █████╗   ██████╔╝ ██║   ██║ ██║ ██╔████╔██║',
-' ██║╚██╗██║ ██╔══╝   ██╔══██╗ ██║   ██║ ██║ ██║╚██╔╝██║',
-' ██║ ╚████║ ███████╗ ██║  ██║ ╚██████╔╝ ██║ ██║ ╚═╝ ██║',
-' ╚═╝  ╚═══╝ ╚══════╝ ╚═╝  ╚═╝  ╚═════╝  ╚═╝ ╚═╝     ╚═╝',
-}
-vim.g.dashboard_custom_section = {
-a = {description = {'  Find File                 '}, command = 'Telescope find_files'},
-b = {description = {'  Recents                   '}, command = 'Telescope oldfiles'},
-c = {description = {'  Load Last Session         '}, command = 'SessionLoad'},
-d = {description = {'  Find Word                 '}, command = 'Telescope live_grep'},
-e = {description = {'  Configuration             '}, command = ':e ~/.config/nvim/init.lua'},
-f = {description = {'  Marks                     '}, command = 'Telescope marks'},
-}
-vim.g.dashboard_custom_footer = {'LunarVim rocks!'}
+    
+local db = require("dashboard")
+ db.setup({
+  theme = 'doom',
+  config = {
+    header = {
+  [[              ▄▄▄▄▄▄▄▄▄            ]],
+  [[           ▄█████████████▄          ]],
+  [[   █████  █████████████████  █████  ]],
+  [[   ▐████▌ ▀███▄       ▄███▀ ▐████▌  ]],
+  [[    █████▄  ▀███▄   ▄███▀  ▄█████    ]],
+  [[    ▐██▀███▄  ▀███▄███▀  ▄███▀██▌    ]],
+  [[     ███▄▀███▄  ▀███▀  ▄███▀▄███    ]],
+  [[     ▐█▄▀█▄▀███ ▄ ▀ ▄ ███▀▄█▀▄█▌    ]],
+  [[      ███▄▀█▄██ ██▄██ ██▄█▀▄███      ]],
+  [[       ▀███▄▀██ █████ ██▀▄███▀      ]],
+  [[      █▄ ▀█████ █████ █████▀ ▄█      ]],
+  [[      ███        ███        ███      ]],
+  [[      ███▄    ▄█ ███ █▄    ▄███      ]],
+  [[      █████ ▄███ ███ ███▄ █████      ]],
+  [[      █████ ████ ███ ████ █████      ]],
+  [[      █████ ████▄▄▄▄▄████ █████      ]],
+  [[       ▀███ █████████████ ███▀      ]],
+  [[         ▀█ ███ ▄▄▄▄▄ ███ █▀        ]],
+  [[            ▀█▌▐█████▌▐█▀            ]],
+  [[               ███████              ]]
+}, --your header
+    center = {
+    {
+        icon = ' ',
+        desc = 'Recently lastest session',
+        key = 'e',
+        keymap = 'SPC f e',
+        action = 'source C:/Users/wxg/AppData/Local/nvim/nvim/cache/Session.vim',
+      },
+        {
+        icon = '',
+        desc = 'Recently opened files ',
+        key = 'f',
+        keymap = 'SPC f d',
+        action = 'Telescope oldfiles',
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Find File           ',
+        desc_hl = 'String',
+        key = 'b',
+        keymap = 'SPC f f',
+        key_hl = 'Number',
+        action = 'Telescope find_files',
+      },
+        {
+        icon = '',
+        desc = 'Search Text',
+        key = 's',
+        keymap = 'SPC f s',
+        action = 'Telescope live_grep',
+      },
+    },
+    footer = {'Do one thing, do it well - Unix Philosophy'}  --your footer
+  }
+})
 end
-function M.setup()
-    -- do nothing
-end
+
 return M

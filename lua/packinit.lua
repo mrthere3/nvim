@@ -17,6 +17,7 @@ require('packer').startup({
     function(use)
         -- theme--
         use { 'arcticicestudio/nord-vim' }
+        use{'folke/tokyonight.nvim'}
         use { 'glepnir/oceanic-material' }
         -- require('pack/colorscheme').config()
         -- packer 管理自己的版本
@@ -91,9 +92,10 @@ require('packer').startup({
         use { 'yaocccc/vim-showmarks' } -- 显示mark在signcolumn
         use({
             "nvim-telescope/telescope.nvim", tag = "nvim-0.6",
-            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" },{'nvim-lua/popup.nvim'}  },
+            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" },{'nvim-lua/popup.nvim'}},
             config = function()
                 require("telescope").load_extension("lazygit")
+--                 require("telescope").load_extension("session")
             end,
         })
         -- debug--
@@ -106,13 +108,17 @@ require('packer').startup({
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
 --         use {'leoluz/nvim-dap-go'}
-        use {'glepnir/dashboard-nvim'}
-        require('pack/dashboard').config()
         use{'kyazdani42/nvim-web-devicons'}
---         require('pack.dashboard').config()
+        use {'glepnir/dashboard-nvim'}
+        require("pack/dashboard").config()
+--         use { 'xolox/vim-session' }
+--         use {'vim-scripts/matchit.zip'}
+--         require('packer').sync()
 
-
-
+        -- 配置选项
+        vim.g.session_directory = '~/.config/nvim/session'
+        vim.g.session_autoload = 'no'
+        vim.g.session_autosave = 'yes'
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },

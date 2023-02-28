@@ -74,6 +74,22 @@ G.opt.viminfo = "!,'10000,<50,s10,h"
 --     return funcs[empty <= 2 and empty or -1](empty) .. ' folded ' .. folded .. ' lines '
 -- end
 
+function save_session()
+  for _, win in ipairs(G.api.nvim_list_wins()) do
+    local bufnr = G.api.nvim_win_get_buf(win)
+    if G.api.nvim_buf_get_option(bufnr, 'buftype') ~= 'terminal' then
+      local bufname = vim.api.nvim_buf_get_name(bufnr)
+      if bufname and bufname ~= '' then
+        G.cmd('mksession! C:/Users/wxg/AppData/Local/nvim/nvim/cache/Session.vim')
+        return
+      end
+    end
+  end
+end
+
+G.cmd('autocmd VimLeave * lua save_session()')
+G.o.sessionoptions = "globals"
+G.o.sessiondirectory = "C:/Users/wxg/AppData/Local/nvim/nvim/cache/Session.vim"
 -- show
 G.opt.cmdheight = 1
 G.opt.updatetime = 300
