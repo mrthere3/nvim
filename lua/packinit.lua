@@ -56,9 +56,9 @@ require('packer').startup({
         use { 'voldikss/vim-floaterm', config = "require('pack/vim-floaterm').setup()" }
 
         -- fzf
---         require('pack/fzf').config()
---         use { 'junegunn/fzf' }
---         use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
+        require('pack/fzf').config()
+        use { 'junegunn/fzf' }
+        use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
 
                 -- tree-sitter
         require('pack/tree-sitter').config()
