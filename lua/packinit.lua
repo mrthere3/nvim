@@ -1,11 +1,11 @@
 local G = require('G')
 local packer_bootstrap = false
-local install_path = G.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-local compiled_path = G.fn.stdpath('config')..'/plugin/packer_compiled.lua'
+local install_path = G.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local compiled_path = G.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
 if G.fn.empty(G.fn.glob(install_path)) > 0 then
     print('Installing packer.nvim...')
-    G.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    G.fn.system({'rm', '-rf', compiled_path})
+    G.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    G.fn.system({ 'rm', '-rf', compiled_path })
     G.cmd [[packadd packer.nvim]]
     packer_bootstrap = true
 end
@@ -16,8 +16,8 @@ end
 require('packer').startup({
     function(use)
         -- theme--
-        use{'arcticicestudio/nord-vim'}
-        use{'glepnir/oceanic-material'}
+        use { 'arcticicestudio/nord-vim' }
+        use { 'glepnir/oceanic-material' }
         -- require('pack/colorscheme').config()
         -- packer 管理自己的版本
         use { 'wbthomason/packer.nvim' }
@@ -79,20 +79,21 @@ require('packer').startup({
         use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
 
         -- 部分个人自写插件
-        require('pack/yaocccc').config()                                               -- yaocccc/* 共用一个config
-        use { 'yaocccc/vim-comment' }                                                  -- 注释插件
-        use { 'yaocccc/vim-echo', cmd = "VECHO" }                                      -- 快速echo、print
-        use { 'yaocccc/vim-fcitx2en', event = 'InsertLeavePre' }                       -- 退出输入模式时自动切换到英文
-        use { 'yaocccc/nvim-hlchunk' }                                                 -- 高亮{}范围
-        use { 'yaocccc/vim-surround' }                                                 -- 操作成对的 ""  {}  [] 等的插件
-        use { 'yaocccc/vim-showmarks' }                                                -- 显示mark在signcolumn
-        use({"nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
-    config = function()
-        require("telescope").load_extension("lazygit")
-    end,
-})
-                -- debug--
+        require('pack/yaocccc').config() -- yaocccc/* 共用一个config
+        use { 'yaocccc/vim-comment' } -- 注释插件
+        use { 'yaocccc/vim-echo', cmd = "VECHO" } -- 快速echo、print
+        use { 'yaocccc/vim-fcitx2en', event = 'InsertLeavePre' } -- 退出输入模式时自动切换到英文
+        use { 'yaocccc/nvim-hlchunk' } -- 高亮{}范围
+        use { 'yaocccc/vim-surround' } -- 操作成对的 ""  {}  [] 等的插件
+        use { 'yaocccc/vim-showmarks' } -- 显示mark在signcolumn
+        use({
+            "nvim-telescope/telescope.nvim", tag = "nvim-0.6",
+            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" },{'nvim-lua/popup.nvim'}  },
+            config = function()
+                require("telescope").load_extension("lazygit")
+            end,
+        })
+        -- debug--
         use {"ravenxrz/nvim-dap",}
         use {"rcarriga/nvim-dap-ui"}
         require('pack/dap-config').config()
@@ -101,7 +102,12 @@ require('packer').startup({
         require('pack/dap-vutext').config()
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
-        use {'leoluz/nvim-dap-go'}
+--         use {'leoluz/nvim-dap-go'}
+        use {'glepnir/dashboard-nvim'}
+        require('pack/dashboard').config()
+        use{'kyazdani42/nvim-web-devicons'}
+--         require('pack.dashboard').config()
+
 
 
     end,
