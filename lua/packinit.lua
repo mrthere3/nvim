@@ -56,11 +56,11 @@ require('packer').startup({
         use { 'voldikss/vim-floaterm', config = "require('pack/vim-floaterm').setup()" }
 
         -- fzf
-        require('pack/fzf').config()
-        use { 'junegunn/fzf' }
-        use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
+--         require('pack/fzf').config()
+--         use { 'junegunn/fzf' }
+--         use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
 
-        -- tree-sitter
+                -- tree-sitter
         require('pack/tree-sitter').config()
         use { 'nvim-treesitter/nvim-treesitter', config = "require('pack/tree-sitter').setup()", run = ':TSUpdate', event = 'BufRead' }
         -- use { 'nvim-treesitter/playground', after = 'nvim-treesitter' }
@@ -90,8 +90,8 @@ require('packer').startup({
         use { 'yaocccc/vim-surround' } -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/vim-showmarks' } -- 显示mark在signcolumn
         use({
-            "nvim-telescope/telescope.nvim",
-            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+            "nvim-telescope/telescope.nvim", tag = "nvim-0.6",
+            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" },{'nvim-lua/popup.nvim'}  },
             config = function()
                 require("telescope").load_extension("lazygit")
             end,
@@ -106,6 +106,13 @@ require('packer').startup({
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
 --         use {'leoluz/nvim-dap-go'}
+        use {'glepnir/dashboard-nvim'}
+        require('pack/dashboard').config()
+        use{'kyazdani42/nvim-web-devicons'}
+--         require('pack.dashboard').config()
+
+
+
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },
