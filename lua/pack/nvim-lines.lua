@@ -12,14 +12,19 @@ function CocErrCount()
     return string.format(' E%d ', coc_diagnostic_info.error)
 end
 function GetFt()
-    local name = G.eval("expand('%:p')")
+    -- 注意linux和windows符号不用
+    -- local name = G.eval("expand('%:p')")
+    local name = G.eval("expand('%:p')"):gsub("/", "\\")
     local ft = G.eval('&ft')
     local icon = require('nvim-lines.common').get_fileicon(ft, name)
     return string.format(' %s ', string.len(ft) > 0 and icon .. ft or '~')
+    -- return name
 end
 
+
 function M.config()
-    G.g.powerline_symbols = { light_right = '', dark_right = '', light_left = '', dark_left = '' }
+    -- G.g.powerline_symbols = { light_right = '', dark_right = '', light_left = '', dark_left = '' }
+    G.g.powerline_symbols = { light_right = '❯', dark_right = '❯', light_left = '❮', dark_left = '❮' }
     G.g.line_powerline_enable = 1
     G.g.line_nerdfont_enable = 1
     G.g.line_unnamed_filename = '~'

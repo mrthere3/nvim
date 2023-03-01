@@ -76,8 +76,8 @@ require('packer').startup({
         use { 'kyazdani42/nvim-tree.lua', config = "require('pack/nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' } }
 
         -- 状态栏 & 标题栏
-        require('pack/nvim-lines').config()
-        use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
+        -- require('pack/nvim-lines').config()
+        -- use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
         --         use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
         --         require('pack/lualine').config()
 
@@ -114,11 +114,9 @@ require('packer').startup({
 --         use { 'xolox/vim-session' }
 --         use {'vim-scripts/matchit.zip'}
 --         require('packer').sync()
-
+        use{'hoob3rt/lualine.nvim'}
+        require('pack/lualine').config()
         -- 配置选项
-        vim.g.session_directory = '~/.config/nvim/session'
-        vim.g.session_autoload = 'no'
-        vim.g.session_autosave = 'yes'
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },
