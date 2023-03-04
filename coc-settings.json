@@ -42,6 +42,11 @@
     "git.addGBlameToBufferVar": true,
     "git.splitWindowCommand": "below 10sp",
     "java.clean.workspace": true,
+    "java.jdt.ls.vmargs": "-Xmx2G",
+    "coc.preferences.preload": [
+  "java"
+],
+
 //    此处设置jdk路径和配套的java-jdt
     "java.configuration.runtimes": [
         {
