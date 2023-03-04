@@ -102,12 +102,7 @@ require('packer').startup({
         require('pack/dap-vutext').config()
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
---         use {'leoluz/nvim-dap-go'}
-        use {'glepnir/dashboard-nvim'}
-        require('pack/dashboard').config()
-        use{'kyazdani42/nvim-web-devicons'}
---         require('pack.dashboard').config()
-
+        use {'leoluz/nvim-dap-go'}
 
 
     end,

@@ -4,11 +4,7 @@ local M = {}
 function M.config()
     -- vim-surround
     G.g.use_toggle_surround = 0
-    --lazygit--
-    G.g.lazygit_floating_window_winblend = 0
-    G.g.lazygit_floating_window_scaling_factor = 0.9
---     G.g.lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯']
-    G.g.lazygit_floating_window_use_plenary = 0
+
     -- vim-echo
     G.map({
         { 'v', 'C', ':<c-u>VECHO<cr>', {silent = true, noremap = true}},

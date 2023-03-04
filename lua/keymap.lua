@@ -253,13 +253,6 @@ keymap("n", "<F8>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "n", "<cmd>lua require'dapui'.eval()<cr>", opts)
 keymap("n", "lg", "<cmd>LazyGit<cr>", opts)
--- telescopekey <leader>ff <cmd>Telescope find_files<cr>
-keymap("n","ff","<cmd>Telescope find_files<cr>",opts)
-keymap("n","<c-p>","<cmd>Telescope live_grep<cr>",opts)
-keymap("n","<c-h>","<cmd>Telescope buffers<cr>",opts)
-keymap("n","fh","<cmd>Telescope help_tags<cr>",opts)
-keymap("n","fg","<cmd>Telescope git_files<cr>:",opts)
-keymap("n","fm","<cmd>Telescope marks<cr>:",opts)
 -- Remap keys for apply code actions at the cursor position.
 -- keymap("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
 -- -- Remap keys for apply code actions affect whole buffer.
