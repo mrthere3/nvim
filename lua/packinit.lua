@@ -16,6 +16,7 @@ end
 require('packer').startup({
     function(use)
         -- theme--
+        use{'folke/tokyonight.nvim'}        
         use { 'arcticicestudio/nord-vim' }
         use { 'glepnir/oceanic-material' }
         -- require('pack/colorscheme').config()
@@ -103,6 +104,7 @@ require('packer').startup({
         require('pack/dap-ui').config()
 --         use {"ravenxrz/DAPInstall.nvim",config = require('pack/dap-config').setup()}
         use {'leoluz/nvim-dap-go'}
+        use{'kyazdani42/nvim-web-devicons'}
 
 
     end,
