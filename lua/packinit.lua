@@ -80,7 +80,8 @@ require('packer').startup({
         -- use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
         --         use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
         --         require('pack/lualine').config()
-
+        --弹出式命令行提示--
+        use { 'gelguy/wilder.nvim', event = 'CmdlineEnter', config = 'require("pack/wilder").setup()' }
 
         -- 部分个人自写插件
         require('pack/yaocccc').config() -- yaocccc/* 共用一个config
