@@ -1,6 +1,5 @@
 local G = require('G')
 local M = {}
-
 function FTToggle(name, cmd, pre_cmd)
     if G.fn['floaterm#terminal#get_bufnr'](name) ~= -1 then
         G.cmd(string.format('exec "FloatermToggle %s"', name))
@@ -17,7 +16,7 @@ function SetFTToggleMap(key, name, cmd, pre_cmd)
 end
 
 function M.config()
-    local run_cmd = { javascript = 'node', typescript = 'ts-node', html = 'google-chrome-stable', python = 'python', go = 'go run', sh = 'bash', lua = 'lua' }
+    local run_cmd = { javascript = 'node', typescript = 'ts-node', html = "start", python = 'python', go = 'go run', sh = 'bash', lua = 'lua' }
     G.g.floaterm_title = ''
     G.g.floaterm_width = 0.8
     G.g.floaterm_height = 0.8

@@ -117,6 +117,9 @@ require('packer').startup({
 --         require('packer').sync()
         use{'hoob3rt/lualine.nvim'}
         require('pack/lualine').config()
+        -- 标签页
+        use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+        require('pack/bufferline').config()
         -- 配置选项
     end,
     config = {

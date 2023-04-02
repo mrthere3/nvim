@@ -33,16 +33,18 @@ function M.config()
             'watches',
             'repl',
           },
-          size = 5,
+          size = 15,
           position = 'bottom',
         },
-        {
-          elements = {
-            'console',
-          },
-          size = 15,
-          position = 'right',
-        },
+        --[[
+         {
+           elements = {
+             'console',
+           },
+           size = 15,
+           position = 'right',
+         },
+        --]]
 --         {
 --           elements = {
 --             'repl',

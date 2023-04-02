@@ -37,7 +37,7 @@ local db = require("dashboard")
       },
         {
         icon = '',
-        desc = 'Recently opened files ',
+        desc = ' Recently opened files ',
         key = 'f',
         keymap = 'SPC f d',
         action = 'Telescope oldfiles',

@@ -61,6 +61,7 @@ function M.config()
         { 'n', 'ct', "<Plug>(coc-codeaction-cursor)", {silent = true}},
         { 'v', 'a', "<Plug>(coc-codeaction-selected)", {silent = true}},
         { "n", "cd", "<Plug>(coc-codeaction)",{silent = true, nowait = true}},
+        {"n","z","<Plug>(coc-snippets-expand)",{silent = true,nowait = true}},
     })
 end
 
