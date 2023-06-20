@@ -238,9 +238,8 @@ G.cmd([[
         call cursor(l, c1)
     endf
 ]])
-local keymap = vim.api.nvim_set_keymap
+local keymap = G.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 keymap("n", "<F6>", "<cmd>lua require'dap'.toggle_breakpoint(); require'pack.dap-util'.store_breakpoints(true)<cr>", opts)
 keymap("n", "<c-i>", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
 keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
