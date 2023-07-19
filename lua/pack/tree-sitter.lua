@@ -47,7 +47,7 @@ end
 function M.setup()
     require('nvim-treesitter.configs').setup {
         ensure_installed = "all",
-        ignore_install = { "swift", "phpdoc","racket","qmldir","tlaplus","php","fusion","blueprint","jsonc"},
+        ignore_install = { "swift", "phpdoc","racket","qmldir","tlaplus","php","fusion","blueprint","jsonc","haskell","ruby","regex"},
         highlight = {
             enable = true
         },
