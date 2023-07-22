@@ -40,7 +40,7 @@ G.opt.expandtab = true
 -- 不自动备份 不换行
 G.opt.backup = false
 G.opt.swapfile = false
-G.opt.wrap = true
+G.opt.wrap = false
 
 -- 持久化撤销
 G.opt.undofile = true

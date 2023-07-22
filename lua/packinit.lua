@@ -60,12 +60,13 @@ require('packer').startup({
         require('pack/fzf').config()
         use { 'junegunn/fzf' }
         use { 'junegunn/fzf.vim', config = "require('pack/fzf').setup()", run = 'cd ~/.fzf && ./install --all', after = "fzf" }
-
-                -- tree-sitter
+        use{"folke/flash.nvim"}
+        -- tree-sitter
         require('pack/tree-sitter').config()
         use { 'nvim-treesitter/nvim-treesitter', config = "require('pack/tree-sitter').setup()", run = ':TSUpdate', event = 'BufRead' }
         -- use { 'nvim-treesitter/playground', after = 'nvim-treesitter' }
-
+        -- 彩虹括号
+        -- use{"p00f/nvim-ts-rainbow"}
         -- markdown预览插件 导航生成插件
         require('pack/markdown').config()
         use { 'mzlogin/vim-markdown-toc', ft = 'markdown' }

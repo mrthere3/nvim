@@ -19,11 +19,11 @@ G.map({
     -- 设置s t 无效 ;=: ,重复上一次宏操作
     { 'n', 's',           '<nop>',   {} },
     { 's', 's',           '<nop>',   {} },
-    { 'n', ';',           ':',       {} },
-    { 'v', ';',           ':',       {} },
+    -- { 'n', ';',           ':',       {} },
+    -- { 'v', ';',           ':',       {} },
     { 'n', '+',           '<c-a>',   { noremap = true } },
     { 'n', '_',           '<c-x>',   { noremap = true } },
-    { 'n', ',',           '@q',      { noremap = true } },
+--     { 'n', ',',           '@q',      { noremap = true } },
 
     -- 快速删除
     { 'n', '<bs>',        '"_ciw',   { noremap = true } },
@@ -141,7 +141,7 @@ G.map({
     { 'i', '<m-right>',   '<esc>:bn<cr>',     { noremap = true, silent = true } },
 
     -- tt 打开一个10行大小的终端
-    { 'n', 'tt',          ':below 10sp | term<cr>a', { noremap = true, silent = true } },
+    { 'n', '<m-t>',          ':below 10sp | term<cr>a', { noremap = true, silent = true } },
 
     -- 切换是否wrap
     { 'n', '\\w',         "&wrap == 1 ? ':set nowrap<cr>' : ':set wrap<cr>'", { noremap = true, expr = true } },
@@ -153,6 +153,12 @@ G.map({
 --     { 'n', "<c-F7>", "<cmd>lua require'dap'.step_into()<cr>", { noremap = true, expr = true } },
 --     { 'n', "<c-F8>", "<cmd>lua require'dap'.step_out()<cr>", { noremap = true, expr = true } },
 --     { 'n', "<c-k>", "<cmd>lua require'dapui'.eval()<cr>", { noremap = true, expr = true } },
+    { 'x', 'sh', '<cmd>lua require("flash").jump()<cr>', {noremap = true} },
+    { 'o', 'sh', '<cmd>lua require("flash").jump()<cr>', {noremap = true}},
+    { 'n', 'sc', '<cmd>lua require("flash").treesitter()<cr>', {noremap = true}},
+    { 'o', 'sc', '<cmd>lua require("flash").treesitter()<cr>', {noremap = true}} ,
+    { 'n', 'sh', '<cmd>lua require("flash").jump()<cr>', { noremap = true} },
+    { 'x', 'sc', '<cmd>lua require("flash").treesitter()<cr>', { noremap = true} },
 })
 
 -- 重设tab长度
@@ -273,7 +279,6 @@ require('telescope').setup {
     },
   },
 }
-
 -- Remap keys for apply code actions at the cursor position.
 -- keymap("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
 -- -- Remap keys for apply code actions affect whole buffer.

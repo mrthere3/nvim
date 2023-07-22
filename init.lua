@@ -9,16 +9,6 @@ G.cmd("colorscheme tokyonight-storm")
 -- G.cmd([[highlight Normal guibg=NONE]])
 -- -- G.background = "light"
 -- G.o.guifontwide = 'YourChosenFont:h10'  -- 替换为你选择的字体名称和大小
-
-
 -- G.g.python3_host_prog = '/usr/bin/python3'
--- G.g.python_host_prog = '/usr/bin/python3'
--- G.g.loaded_node_provider = '/usr/bin/node'
--- 背景透明设置
--- if vim.fn.has('win32') or vim.fn.has('win64') then
---     vim.o.background = 'dark'  -- 设置为'light'以使用浅色背景
---     vim.cmd('set termguicolors')
---     vim.cmd('hi Normal  ctermfg=252 ctermbg=none')
--- end
--- hi Normal  ctermfg=252 ctermbg=none
+
 

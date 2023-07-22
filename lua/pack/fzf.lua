@@ -23,8 +23,18 @@ function M.config()
 --         { 'n', '<c-p>', ':Files<cr>', {silent = true, noremap = true}},
         { 'n', '<c-f>', ':BLines<cr>', {silent = true, noremap = true}},
 --         { 'n', '<c-g>', ':GFiles?<cr>', {silent = true, noremap = true}},
---         { 'n', '<c-h>', ':CHistory<cr>', {silent = true, noremap = true}},
     })
+--         { 'n', '<c-h>', ':CHistory<cr>', {silent = true, noremap = true}},
+    local telescope = require('telescope')
+
+    -- 配置Telescope的布局
+    telescope.setup{
+      defaults = {
+        layout_config = {
+          prompt_position = "top", -- 将搜索框置于顶部
+        },
+      },
+    }
 end
 
 function M.setup()
