@@ -97,6 +97,7 @@ function M.setup()
         on_attach = on_attach,
         sort_by = "case_sensitive",
         view = {
+            width = 25,
 --             mappings = {
 --                 list = {
 --                     { key = "P", action = "cd" },
@@ -127,7 +128,7 @@ function M.setup()
             }
         },
         update_focused_file = {
-            enable = true,
+            enable =false,
             update_root = false,
             ignore_list = {},
         },

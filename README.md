@@ -236,7 +236,7 @@ PS: 如果需要格式化js和ts代码，请手动安装: npm i js-beautify -g
 
   | 模式        | 键                   | 说明                                 |
   | ------      | --------             | ---------                            |
-  | normal      | T                    | 打开/关闭 nvim-tree                  |
+  | normal      | tt                   | 打开/关闭 nvim-tree                  |
   | nvim-tree内 | a/A                  | 新建文件或文件夹                     |
   | nvim-tree内 | r                    | 重命名                               |
   | nvim-tree内 | W                    | 关闭所有打开的目录                   |
@@ -368,3 +368,21 @@ PS: 如果需要格式化js和ts代码，请手动安装: npm i js-beautify -g
   选中文本后 C: 再下一行添加 console.log(选中的内容) 或 echo $选中的内容 等等等
 
 </details>
+
+<details>
+  <summary style="cursor: pointer; text-decoration:underline; color: #2AD;">yaocccc/vim-fcitx2en -- 退出insert模式时 自动切换到英文</summary>
+
+  [github: yaocccc/vim-fcitx2en](https://github.com/yaocccc/vim-fcitx2en)  
+
+</details>
+
+<details>
+  <summary style="cursor: pointer; text-decoration:underline; color: #2AD;">folke/flash.nvim快速操作光标的插件</summary>
+
+  [github: folke/flash](https://github.com/folke/flash.nvim)  
+
+  | 模式   | 键                   | 说明                                 |
+  | ------ | --------             | ---------                            |
+  | nxo    | sh                   | 查找当前buff的关键                   |
+  | nxo    | ssh                  | 快速选中函数方法                     |
+</details
